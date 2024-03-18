@@ -84,7 +84,7 @@ track_system.new = function(...)
     local track_functions = old_track_system_new(...);
     local arguments = {...};
     
-    if arguments[2]._players._slots:get(arguments[3])._name == player.Name then
+    if arguments[2]._players._slots:get(arguments[3])._name == player.Name then -- make sure its only autoplaying your notes if in multiplayer
         for index, track_function in next, track_functions do 
             local upvalues = getupvalues(track_function);
             
